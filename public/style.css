@@ -3,7 +3,7 @@ body {
   box-sizing: border-box;
   margin: 0;
   background: #f3ebe8;
-  font-family: monospace;
+  font-family: "Roboto Mono", monospace;
 }
 
 a {
@@ -110,6 +110,11 @@ section.post-details {
 }
 
 .homepage-tagline {
+  font-size: 15px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  width: 500px;
+  transform: translate(60%, -55%);
 }
 /*####################Letter Animation####################  */
 .letters-wrap {
