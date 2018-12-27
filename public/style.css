@@ -1,0 +1,228 @@
+/*####### Universal element styling  */
+body {
+  box-sizing: border-box;
+  margin: 0;
+  background: #f3ebe8;
+  font-family: monospace;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+/*##### Universal Class Styling */
+
+.fixed {
+  position: fixed;
+}
+
+.transition {
+  transform: translate(0rem, 0rem);
+  transition: all 2.5s ease;
+}
+
+.absolute {
+  position: absolute;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+/*##### Admin Side Bar */
+.posts-overview {
+  left: 0;
+  height: 100vh;
+  width: 300px;
+  background-color: black;
+  padding-top: 30px;
+}
+
+.posts-overview h2 {
+  font-size: 2rem;
+  color: white;
+}
+
+.post-details {
+  background: grey;
+}
+
+section.post-details {
+  width: 100vw;
+}
+
+.post-details textarea,
+.admin-label,
+.save-draft-btn {
+  display: block;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.post-details textarea {
+}
+
+.admin-label {
+  width: 162px;
+  font-size: 1.8rem;
+  font-weight: bold;
+  font-family: sans-serif;
+}
+
+/*################ NAVIGATION ##########################  */
+.nav-wrap {
+  display: flex;
+  padding: 0 15px;
+  justify-content: space-between;
+  border-bottom: 1px solid black;
+  margin-bottom: 5%;
+}
+
+.nav-wrap h1 {
+}
+
+.site-links a {
+  display: inline-block;
+  margin-right: 25px;
+  margin-top: 16.185px;
+  margin-bottom: 16.185px;
+}
+
+.site-links a:hover {
+  text-decoration: underline;
+}
+
+/*##############HOMEPAGE#####################  */
+.homepage-wrap {
+  border: 1px solid purple;
+  display: grid;
+  height: 1000px;
+  width: 90vw;
+  transform: translateX(5%);
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+}
+
+.hilma-house {
+  height: 560px;
+  width: 615px;
+}
+
+.homepage-tagline {
+}
+/*####################Letter Animation####################  */
+.letters-wrap {
+  font-family: "Roboto", sans-serif;
+  font-weight: bold;
+  font-size: 4.5rem;
+}
+.modern,
+.psyche {
+}
+
+.a {
+  transform: translate(33rem, 17rem);
+}
+
+.b {
+  bottom: 20px;
+  left: 250px;
+}
+
+.c {
+  right: 60px;
+  top: 190px;
+}
+
+.d {
+  right: 550px;
+  bottom: 70px;
+}
+
+.e {
+  transform: translate(13rem, 25rem);
+  /* top: 13rem;
+  right: 25rem; */
+}
+
+.f {
+  top: 6rem;
+  left: 5rem;
+}
+
+.g {
+  top: 7rem;
+  left: 20rem;
+}
+
+.h {
+  left: 41rem;
+  top: 13rem;
+}
+
+.i {
+  bottom: 9rem;
+  right: 12rem;
+}
+
+.j {
+  bottom: 8rem;
+  left: 5rem;
+}
+
+.k {
+  right: 9rem;
+  top: 4rem;
+}
+
+.l {
+}
+
+/*##########Blogpost Template 1 CSS############  */
+.blogpost-grid-container {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  grid-template-rows: 100vh;
+
+  width: 100vw;
+  height: 100vh;
+  border: 1px solid red;
+}
+
+.blogpost-template {
+  /* display: flex; */
+}
+
+.blogpost-template section {
+  /* display: flex; */
+}
+
+.blogpost-template section p::selection {
+  background-color: white;
+}
+
+section.blogpost-details {
+  display: inline-block;
+  position: sticky;
+  /* border: 1px solid green; */
+  width: 100%;
+  margin-left: 5%;
+  margin-top: 10%;
+}
+
+.blogpost-details p {
+  font-size: 1.1rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+}
+
+p.blogpost-text {
+  line-height: 1.7;
+}
+
+.blogpost-content {
+  padding-left: 10%;
+  padding-right: 5%;
+}
+/* who would you be without your story ? */
