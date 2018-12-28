@@ -9,7 +9,7 @@ class Homepage extends React.Component {
     this.letterAnimation = this.letterAnimation.bind(this);
   }
   componentDidMount() {
-    //letter animation with setTimeout
+    setTimeout(this.letterAnimation, 5000);
   }
 
   letterAnimation() {
