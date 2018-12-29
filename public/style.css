@@ -231,3 +231,14 @@ p.blogpost-text {
   padding-right: 5%;
 }
 /* who would you be without your story ? */
+
+/*#####################Libsyn Player#################  */
+
+.play-bar,
+.loading .sk-rect,
+.spinner .bounce1,
+.spinner .bounce2,
+.spinner .bounce3,
+.nano > .nano-pane > .nano-slider {
+  background-color: black;
+}

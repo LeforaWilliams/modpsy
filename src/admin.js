@@ -1,6 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import axios from "./axios.js";
+import PageContainer from "./page-container.js";
 
 export default class Admin extends React.Component {
   constructor(props) {
@@ -28,7 +29,7 @@ export default class Admin extends React.Component {
   render() {
     return (
       <div>
-        <h2>Login here with your admin details</h2>
+        <PageContainer />
         <section className="fixed posts-overview">
           <h2>Posts</h2>
           <section className="post-details">
