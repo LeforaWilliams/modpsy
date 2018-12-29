@@ -30,6 +30,18 @@ a {
   cursor: pointer;
 }
 
+.bold {
+  font-weight: bold;
+}
+
+.italic {
+  font-style: italic;
+}
+
+.underline {
+  text-decoration: underline;
+}
+/*###############ADMIN#########################  */
 /*##### Admin Side Bar */
 .posts-overview {
   left: 0;
@@ -68,6 +80,13 @@ section.post-details {
   font-size: 1.8rem;
   font-weight: bold;
   font-family: sans-serif;
+}
+
+.editors {
+  border: 1px blue solid;
+  padding: 1em;
+  margin: 1em;
+  font-size: 90%;
 }
 
 /*################ NAVIGATION ##########################  */
