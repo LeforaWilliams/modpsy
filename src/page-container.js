@@ -1,11 +1,11 @@
 import React from "react";
-import { EditorState, RichUtils } from "draft-js";
+import { Editor, EditorState, RichUtils } from "draft-js";
 //RichUtlis --> contains functions for inline and block style options.
-import { Editor } from "draft-js-plugins-editor";
-import createHighlightPlugin from "./plugins/highlightPlugin.js";
+//import Editor from "draft-js-plugins-editor";
+// import createHighlightPlugin from "./plugins/highlightPlugin.js";
 
 //Generating Plugins
-const highlightPlugin = createHighlightPlugin();
+// const highlightPlugin = createHighlightPlugin();
 
 class PageContainer extends React.Component {
   constructor(props) {
@@ -19,7 +19,7 @@ class PageContainer extends React.Component {
     this.onBoldClick = this.onBoldClick.bind(this);
     this.onItalicClick = this.onItalicClick.bind(this);
     this.onUnderlineClick = this.onUnderlineClick.bind(this);
-    this.plugins = [highlightPlugin];
+    // this.plugins = [highlightPlugin];
   }
 
   //need to create this onChange function and pass it to the Editor as a props, this function handles the state when
@@ -81,7 +81,6 @@ class PageContainer extends React.Component {
             editorState={this.state.editorState}
             onChange={this.onChange}
             handleKeyCommand={this.handleKeyCommand}
-            plugins={this.plugins}
           />
         </div>
       </div>
