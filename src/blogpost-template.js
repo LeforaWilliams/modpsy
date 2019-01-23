@@ -8,7 +8,7 @@ export default class Blogpost extends React.Component {
   //put blog section into grid for precise placements next to each other
   render() {
     return (
-      <div className="blogpost-template blogpost-grid-container">
+      <div className="blogpost-wrap">
         <section className="blogpost-details">
           <p className="blogpost-title">
             {" "}

@@ -7,7 +7,7 @@ const Navigation = () => {
       <h1>
         <Link to="/">Modern Psyche</Link>
       </h1>
-      <section className="site-links">
+      <section className="nav-links">
         <Link to="/blogpost"> Journal </Link>
         <Link to="/podcast">Podcast</Link>
         <Link to="/session">Session</Link>

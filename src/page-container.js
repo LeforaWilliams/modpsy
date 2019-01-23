@@ -1,5 +1,11 @@
 import React from "react";
-import { Editor, EditorState, RichUtils } from "draft-js";
+import {
+  Editor,
+  EditorState,
+  RichUtils,
+  convertToRaw,
+  convertFromRaw
+} from "draft-js";
 //RichUtlis --> contains functions for inline and block style options.
 //import Editor from "draft-js-plugins-editor";
 // import createHighlightPlugin from "./plugins/highlightPlugin.js";
@@ -10,20 +16,30 @@ import { Editor, EditorState, RichUtils } from "draft-js";
 class PageContainer extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      //after setting the EditorState empty you have to pass the state as a prop to the Editor Component
-      editorState: EditorState.createEmpty()
-    };
+    this.state = {};
+    const content = window.localStorage.getItem("content");
+    if (content) {
+      this.state.editorState = EditorState.createWithContent(
+        convertFromRaw(JSON.parse(content))
+      );
+    } else {
+      this.state.editorState = EditorState.createEmpty();
+    }
+
+    //################### Biding Functions#############################
     this.onChange = this.onChange.bind(this);
     this.handleKeyCommand = this.handleKeyCommand.bind(this);
     this.onBoldClick = this.onBoldClick.bind(this);
     this.onItalicClick = this.onItalicClick.bind(this);
     this.onUnderlineClick = this.onUnderlineClick.bind(this);
+    this.saveContent = this.saveContent.bind(this);
     // this.plugins = [highlightPlugin];
   }
 
   //need to create this onChange function and pass it to the Editor as a props, this function handles the state when
   onChange(editorState) {
+    const contentState = editorState.getCurrentContent();
+    this.saveContent(contentState);
     this.setState({
       editorState
     });
@@ -60,6 +76,13 @@ class PageContainer extends React.Component {
   onUnderlineClick() {
     this.onChange(
       RichUtils.toggleInlineStyle(this.state.editorState, "UNDERLINE")
+    );
+  }
+
+  saveContent(content) {
+    window.localStorage.setItem(
+      "content",
+      JSON.stringify(convertToRaw(content))
     );
   }
 

@@ -101,14 +101,14 @@ section.post-details {
 .nav-wrap h1 {
 }
 
-.site-links a {
+.nav-links {
   display: inline-block;
   margin-right: 25px;
   margin-top: 16.185px;
   margin-bottom: 16.185px;
 }
 
-.site-links a:hover {
+.nav-links:hover {
   text-decoration: underline;
 }
 
@@ -204,7 +204,8 @@ section.post-details {
 }
 
 /*##########Blogpost Template 1 CSS############  */
-.blogpost-grid-container {
+
+.blogpost-wrap {
   display: grid;
   grid-template-columns: 1fr 2fr;
   grid-template-rows: 100vh;
@@ -212,18 +213,6 @@ section.post-details {
   width: 100vw;
   height: 100vh;
   border: 1px solid red;
-}
-
-.blogpost-template {
-  /* display: flex; */
-}
-
-.blogpost-template section {
-  /* display: flex; */
-}
-
-.blogpost-template section p::selection {
-  background-color: white;
 }
 
 section.blogpost-details {
@@ -235,19 +224,23 @@ section.blogpost-details {
   margin-top: 10%;
 }
 
-.blogpost-details p {
+.blogpost-title {
   font-size: 1.1rem;
   font-weight: 600;
   letter-spacing: 2px;
 }
 
-p.blogpost-text {
-  line-height: 1.7;
+.blogpost-wrap section p::selection {
+  background-color: white;
 }
 
 .blogpost-content {
   padding-left: 10%;
   padding-right: 5%;
+}
+
+.blogpost-text {
+  line-height: 1.7;
 }
 /* who would you be without your story ? */
 
