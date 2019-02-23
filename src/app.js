@@ -3,27 +3,29 @@ import ReactDom from "react-dom";
 import { Link, BrowserRouter, Route } from "react-router-dom";
 
 //Components
-import Blogpost from "./blogpost-template.js";
 import Navigation from "./navigation.js";
+import Blogpost from "./blogpost-template.js";
 import Homepage from "./homepage.js";
 import Podcast from "./podcast.js";
+import EnterSite from "./enter.js";
 
 export default class App extends React.Component {
-  constructor() {
-    super();
-    this.state = {};
-  }
-  render() {
-    return (
-      <BrowserRouter>
-        <div>
-          <Route exact path="/" component={Homepage} />
+    constructor() {
+        super();
+        this.state = {};
+    }
+    render() {
+        return (
+            <BrowserRouter>
+                <div>
+                    <Navigation />
 
-          <Navigation />
-          <Route path="/blogpost" component={Blogpost} />
-          <Route path="/podcast" component={Podcast} />
-        </div>
-      </BrowserRouter>
-    );
-  }
+                    <Route path="/enter-site" component={EnterSite} />
+                    <Route exact path="/" component={Homepage} />
+                    <Route path="/blogpost" component={Blogpost} />
+                    <Route path="/podcast" component={Podcast} />
+                </div>
+            </BrowserRouter>
+        );
+    }
 }

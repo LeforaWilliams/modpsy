@@ -117,11 +117,9 @@ section.post-details {
     border: 1px solid purple;
     display: flex;
     justify-content: space-between;
-    height: 1000px;
-    width: 90vw;
-    transform: translateX(5%);
-    /* grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr; */
+    height: 100%;
+    width: 80vw;
+    margin: 0 auto;
 }
 
 .header-content-container {
@@ -131,6 +129,7 @@ section.post-details {
 .header-image {
     height: 560px;
     width: 615px;
+    object-fit: cover;
 }
 
 .header-tagline {
@@ -210,6 +209,20 @@ section.post-details {
 
 .l {
 }
+
+/*#######Enter Site#######*/
+#enter-site-video {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -100;
+    transform: translate(-50%, -50%);
+}
+/*#######Enter Site END#######*/
 
 /*##########Blogpost Template 1 CSS############  */
 
