@@ -1,203 +1,211 @@
 /*####### Universal element styling  */
 body {
-  box-sizing: border-box;
-  margin: 0;
-  background: #f3ebe8;
-  font-family: "Roboto Mono", monospace;
+    box-sizing: border-box;
+    margin: 0;
+    background: #f3ebe8;
+    font-family: "Roboto Mono", monospace;
 }
 
 a {
-  text-decoration: none;
-  color: black;
+    text-decoration: none;
+    color: black;
 }
 
 /*##### Universal Class Styling */
 
 .fixed {
-  position: fixed;
+    position: fixed;
 }
 
 .transition {
-  transform: translate(0rem, 0rem);
-  transition: all 2.5s ease;
+    transform: translate(0rem, 0rem);
+    transition: all 2.5s ease;
 }
 
 .absolute {
-  position: absolute;
+    position: absolute;
 }
 
 .pointer {
-  cursor: pointer;
+    cursor: pointer;
 }
 
 .bold {
-  font-weight: bold;
+    font-weight: bold;
 }
 
 .italic {
-  font-style: italic;
+    font-style: italic;
 }
 
 .underline {
-  text-decoration: underline;
+    text-decoration: underline;
 }
 /*###############ADMIN#########################  */
 /*##### Admin Side Bar */
 .posts-overview {
-  left: 0;
-  height: 100vh;
-  width: 300px;
-  background-color: black;
-  padding-top: 30px;
+    left: 0;
+    height: 100vh;
+    width: 300px;
+    background-color: black;
+    padding-top: 30px;
 }
 
 .posts-overview h2 {
-  font-size: 2rem;
-  color: white;
+    font-size: 2rem;
+    color: white;
 }
 
 .post-details {
-  background: grey;
+    background: grey;
 }
 
 section.post-details {
-  width: 100vw;
+    width: 100vw;
 }
 
 .post-details textarea,
 .admin-label,
 .save-draft-btn {
-  display: block;
-  margin: 0 auto;
-  text-align: left;
+    display: block;
+    margin: 0 auto;
+    text-align: left;
 }
 
 .post-details textarea {
 }
 
 .admin-label {
-  width: 162px;
-  font-size: 1.8rem;
-  font-weight: bold;
-  font-family: sans-serif;
+    width: 162px;
+    font-size: 1.8rem;
+    font-weight: bold;
+    font-family: sans-serif;
 }
 
 .editors {
-  border: 1px blue solid;
-  padding: 1em;
-  margin: 1em;
-  font-size: 90%;
+    border: 1px blue solid;
+    padding: 1em;
+    margin: 1em;
+    font-size: 90%;
 }
 
 /*################ NAVIGATION ##########################  */
 .nav-wrap {
-  display: flex;
-  padding: 0 15px;
-  justify-content: space-between;
-  border-bottom: 1px solid black;
-  margin-bottom: 5%;
+    display: flex;
+    padding: 0 15px;
+    justify-content: space-between;
+    border-bottom: 1px solid black;
+    margin-bottom: 5%;
 }
 
 .nav-wrap h1 {
 }
 
 .nav-links {
-  display: inline-block;
-  margin-right: 25px;
-  margin-top: 16.185px;
-  margin-bottom: 16.185px;
+    display: inline-block;
+    margin-right: 25px;
+    margin-top: 16.185px;
+    margin-bottom: 16.185px;
 }
 
 .nav-links:hover {
-  text-decoration: underline;
+    text-decoration: underline;
 }
 
 /*##############HOMEPAGE#####################  */
-.homepage-wrap {
-  border: 1px solid purple;
-  display: grid;
-  height: 1000px;
-  width: 90vw;
-  transform: translateX(5%);
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr 1fr;
+.header-container {
+    border: 1px solid purple;
+    display: flex;
+    justify-content: space-between;
+    height: 1000px;
+    width: 90vw;
+    transform: translateX(5%);
+    /* grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr; */
 }
 
-.hilma-house {
-  height: 560px;
-  width: 615px;
+.header-content-container {
+    position: relative;
+    border: 1px solid red;
+}
+.header-image {
+    height: 560px;
+    width: 615px;
 }
 
-.homepage-tagline {
-  font-size: 15px;
-  font-weight: bold;
-  letter-spacing: 2px;
-  width: 500px;
-  transform: translate(60%, -55%);
+.header-tagline {
+    position: absolute;
+    top: 45%;
+    left: -35%;
+    font-size: 15px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    width: 500px;
 }
 /*####################Letter Animation####################  */
-.letters-wrap {
-  font-family: "Roboto", sans-serif;
-  font-weight: bold;
-  font-size: 4.5rem;
+.letters-container {
+    font-family: "Roboto", sans-serif;
+    font-weight: bold;
+    font-size: 4.5rem;
+    cursor: pointer;
 }
 .modern,
 .psyche {
 }
 
 .a {
-  transform: translate(33rem, 17rem);
+    transform: translate(33rem, 17rem);
 }
 
 .b {
-  bottom: 20px;
-  left: 250px;
+    bottom: 20px;
+    left: 250px;
 }
 
 .c {
-  right: 60px;
-  top: 190px;
+    right: 60px;
+    top: 190px;
 }
 
 .d {
-  right: 550px;
-  bottom: 70px;
+    right: 550px;
+    bottom: 70px;
 }
 
 .e {
-  transform: translate(13rem, 25rem);
-  /* top: 13rem;
+    transform: translate(13rem, 25rem);
+    /* top: 13rem;
   right: 25rem; */
 }
 
 .f {
-  top: 6rem;
-  left: 5rem;
+    top: 6rem;
+    left: 5rem;
 }
 
 .g {
-  top: 7rem;
-  left: 20rem;
+    top: 7rem;
+    left: 20rem;
 }
 
 .h {
-  left: 41rem;
-  top: 13rem;
+    left: 41rem;
+    top: 13rem;
 }
 
 .i {
-  bottom: 9rem;
-  right: 12rem;
+    bottom: 9rem;
+    right: 12rem;
 }
 
 .j {
-  bottom: 8rem;
-  left: 5rem;
+    bottom: 8rem;
+    left: 5rem;
 }
 
 .k {
-  right: 9rem;
-  top: 4rem;
+    right: 9rem;
+    top: 4rem;
 }
 
 .l {
@@ -206,41 +214,41 @@ section.post-details {
 /*##########Blogpost Template 1 CSS############  */
 
 .blogpost-wrap {
-  display: grid;
-  grid-template-columns: 1fr 2fr;
-  grid-template-rows: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: 100vh;
 
-  width: 100vw;
-  height: 100vh;
-  border: 1px solid red;
+    width: 100vw;
+    height: 100vh;
+    border: 1px solid red;
 }
 
 section.blogpost-details {
-  display: inline-block;
-  position: sticky;
-  /* border: 1px solid green; */
-  width: 100%;
-  margin-left: 5%;
-  margin-top: 10%;
+    display: inline-block;
+    position: sticky;
+    /* border: 1px solid green; */
+    width: 100%;
+    margin-left: 5%;
+    margin-top: 10%;
 }
 
 .blogpost-title {
-  font-size: 1.1rem;
-  font-weight: 600;
-  letter-spacing: 2px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    letter-spacing: 2px;
 }
 
 .blogpost-wrap section p::selection {
-  background-color: white;
+    background-color: white;
 }
 
 .blogpost-content {
-  padding-left: 10%;
-  padding-right: 5%;
+    padding-left: 10%;
+    padding-right: 5%;
 }
 
 .blogpost-text {
-  line-height: 1.7;
+    line-height: 1.7;
 }
 /* who would you be without your story ? */
 
@@ -252,5 +260,5 @@ section.blogpost-details {
 .spinner .bounce2,
 .spinner .bounce3,
 .nano > .nano-pane > .nano-slider {
-  background-color: black;
+    background-color: black;
 }
