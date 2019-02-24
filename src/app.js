@@ -13,13 +13,16 @@ export default class App extends React.Component {
     constructor() {
         super();
         this.state = {};
+        this.updateHeaderImage = this.updateHeaderImage.bind(this);
+    }
+    updateHeaderImage() {
+        //change header image only if logged in as admin
     }
     render() {
         return (
             <BrowserRouter>
-                <div>
+                <div className="app-container">
                     <Navigation />
-
                     <Route path="/enter-site" component={EnterSite} />
                     <Route exact path="/" component={Homepage} />
                     <Route path="/blogpost" component={Blogpost} />

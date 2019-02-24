@@ -90,7 +90,7 @@ section.post-details {
 }
 
 /*################ NAVIGATION ##########################  */
-.nav-wrap {
+.nav-container {
     display: flex;
     padding: 0 15px;
     justify-content: space-between;
@@ -98,23 +98,26 @@ section.post-details {
     margin-bottom: 5%;
 }
 
-.nav-wrap h1 {
-}
-
-.nav-links {
+.nav-links-container {
     display: inline-block;
     margin-right: 25px;
     margin-top: 16.185px;
     margin-bottom: 16.185px;
 }
 
-.nav-links:hover {
+.nav-links li {
+    display: inline-block;
+    list-style-type: none;
+    margin-right: 15px;
+    letter-spacing: 2px;
+}
+
+.nav-links li:hover {
     text-decoration: underline;
 }
 
 /*##############HOMEPAGE#####################  */
 .header-container {
-    border: 1px solid purple;
     display: flex;
     justify-content: space-between;
     height: 100%;
@@ -124,8 +127,8 @@ section.post-details {
 
 .header-content-container {
     position: relative;
-    border: 1px solid red;
 }
+
 .header-image {
     height: 560px;
     width: 615px;
