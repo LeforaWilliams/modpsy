@@ -21,3 +21,8 @@ CREATE TABLE posts (
     image_3 TEXT,
     status INT NOT NULL DEFAULT 1
 );
+
+CREATE TABLE test (
+  id SERIAL PRIMARY KEY,
+  text TEXT
+);

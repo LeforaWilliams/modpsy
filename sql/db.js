@@ -2,10 +2,9 @@ const spicedPg = require("spiced-pg");
 // const { password } = require("./secrets.json");
 let dbUrl;
 if (process.env.DATABASE_URL) {
-  dbUrl = process.env.DATABASE_URL;
+    dbUrl = process.env.DATABASE_URL;
 } else {
-  const secret = require("../secrets.json");
-  dbUrl = `postgres:postgres:${secret.password}@localhost:5432/modernpsyche`;
+    dbUrl = `postgres:postgres:postgres@localhost:5432/modernpsyche`;
 }
 
 const db = spicedPg(dbUrl);
@@ -15,23 +14,35 @@ const db = spicedPg(dbUrl);
 // delete post
 
 module.exports.saveDraft = function() {
-  return db.query(
-    `
-        INSERT INTO posts
+    return db.query(
+        ` INSERT INTO posts
         (title, subtitle, author, content_text title_image, image_2, image_3, status)
         VALUES ($1, $2, $3, $4, $5, $6, $7, $8)`[
-      (title,
-      subtitle,
-      author,
-      content_text,
-      title_image,
-      image_2,
-      image_3,
-      status)
-    ]
-  );
+            (title,
+            subtitle,
+            author,
+            content_text,
+            title_image,
+            image_2,
+            image_3,
+            status)
+        ]
+    );
+};
+
+module.exports.saveContent = function(sampleText) {
+    return db.query(
+        `
+    INSERT INTO test (text) VALUES ($1) RETURNING id
+    `,
+        [sampleText]
+    );
+};
+
+module.exports.getContent = () => {
+    return db.query(`SELECT text FROM test LIMIT 1`);
 };
 
 module.exports.editDraft = function() {
-  return db.query(``);
+    return db.query(``);
 };
