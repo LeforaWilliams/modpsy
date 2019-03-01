@@ -40,7 +40,7 @@ module.exports.saveContent = function(sampleText) {
 };
 
 module.exports.getContent = () => {
-    return db.query(`SELECT text FROM test LIMIT 1`);
+    return db.query(`SELECT text FROM test ORDER BY id DESC LIMIT 1`);
 };
 
 module.exports.editDraft = function() {
