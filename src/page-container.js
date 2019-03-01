@@ -34,9 +34,9 @@ class PageContainer extends React.Component {
             .get("/save-draft")
             .then(dbContent => {
                 if (dbContent.data) {
-                    const rawText = JSON.parse(dbContent.data.rows[0].text)
-                        .content;
-                    const raw = JSON.parse(rawText).content;
+                    const rawText = JSON.parse(
+                        JSON.parse(dbContent.data.rows[0].text).content
+                    ).content;
                     this.setState({
                         editorState: EditorState.createWithContent(
                             convertFromRaw(rawText)
