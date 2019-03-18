@@ -1,12 +1,10 @@
 const spicedPg = require("spiced-pg");
-// const { password } = require("./secrets.json");
 let dbUrl;
 if (process.env.DATABASE_URL) {
     dbUrl = process.env.DATABASE_URL;
 } else {
     dbUrl = `postgres:postgres:postgres@localhost:5432/modernpsyche`;
 }
-
 const db = spicedPg(dbUrl);
 
 // post post

@@ -70,9 +70,7 @@ class PageContainer extends React.Component {
         //     editorState
         // });
         let content = JSON.stringify({ content: convertToRaw(contentState) });
-        axios
-            .post("/save-draft", { content })
-            .then(() => console.log("POSTED"));
+        axios.post("/save-draft", { content });
     }
 
     //Rich Utils contains info for keybord shortcuts/cominations for bold and italics..., this function will handle these key commands
@@ -119,23 +117,25 @@ class PageContainer extends React.Component {
             return <h2> Loading...</h2>;
         }
         return (
-            <div className="editorContainer">
-                <button className="bold" onClick={this.onBoldClick}>
-                    Bold
-                </button>
-                <button className="italic" onClick={this.onItalicClick}>
-                    Italic
-                </button>
-                <button onClick={this.onUnderlineClick}>Underline</button>
-                <div className="editors">
+            <div className="editor-container">
+                <div className="editor-buttons">
+                    <button className="bold" onClick={this.onBoldClick}>
+                        Bold
+                    </button>
+                    <button className="italic" onClick={this.onItalicClick}>
+                        Italic
+                    </button>
+                    <button onClick={this.onUnderlineClick}>Underline</button>
+                </div>
+                <div className="editor-textfield">
                     {/*Editor Component that was imported from draft.js*/}
                     <Editor
                         editorState={editorState}
                         onChange={this.onChange}
                         handleKeyCommand={this.handleKeyCommand}
                     />
-                    <button onClick={this.saveContent}>Save Draft</button>
                 </div>
+                <button onClick={this.saveContent}>Save Draft</button>
             </div>
         );
     }
