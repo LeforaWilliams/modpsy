@@ -1,6 +1,11 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import { Link, BrowserRouter, Route } from "react-router-dom";
+
+//Components
 import PageContainer from "./page-container.js";
+import AdminRegistration from "./admin-registration.js";
+import AdminLogin from "./admin-login.js";
 
 export default class Admin extends React.Component {
     constructor(props) {
@@ -9,9 +14,12 @@ export default class Admin extends React.Component {
 
     render() {
         return (
-            <div className="admin-container">
-                <PageContainer />
-            </div>
+            <BrowserRouter>
+                <div className="admin-container">
+                    <Route path="/blog" component={PageContainer} />
+                    <Route path="/registration" component={AdminRegistration} />
+                </div>
+            </BrowserRouter>
         );
     }
 }

@@ -7,8 +7,8 @@ import Admin from "./admin.js";
 // https://github.com/spicedacademy/sesame/tree/master/redux
 let elem;
 if (location.pathname == "/admin") {
-  elem = <Admin />;
+    elem = <Admin />;
 } else {
-  elem = <App />;
+    elem = <App />;
 }
 ReactDOM.render(elem, document.querySelector("main"));

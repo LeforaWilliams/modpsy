@@ -32,7 +32,7 @@ app.post("/admin/register", (req, res) => {
     } else {
         hashPass(password)
             .then(hashedPass => {
-                return registerUser(firstName, lastName, email, hashedPass);
+                return registerAdmin(firstName, lastName, email, hashedPass);
             })
             .then(adminCred => {
                 let { adminName, adminId, adminEmail, loggedIn } = req.session;
@@ -40,6 +40,10 @@ app.post("/admin/register", (req, res) => {
                 adminId = adminCred.rows[0].id;
                 adminEmail = email;
                 loggedIn = adminCred.rows[0].id;
+
+                res.json({
+                    success: true
+                });
             });
     }
 });

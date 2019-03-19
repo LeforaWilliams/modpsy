@@ -12,5 +12,7 @@ module.exports.registerAdmin = (name, lastName, email, password) => {
     INSERT INTO admin (name, lastname, email, password)
     VALUES ($1,$2,$3,$4)
     RETURNING id`[(name, lastName, email, password)];
-    return db.query(insertAdmin);
+    return db.query(insertAdmin).catch(err => {
+        console.log("Error when saving admin registration to db >>>>", err);
+    });
 };
