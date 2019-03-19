@@ -1,9 +1,0 @@
-Registration and Login Flow.
-
-Registration- the downlow:
-
-Once the user fills out the input form and presses the button, we need to first check if the user has entered all the necessary information. We do that by inspecting the request.body and check it all of the information we need is present. If not, we send back an error response. If however all the data is present, we can't just store it in the database. This is becuase we need to encrypt the password before we store it in our database. To do this, we use the bcrypt libaray which has functions that encrypt a string of text and subsequently compares the encrypted text we have in our database to the input the user has provided us with (for the login process). Once the bcrypt function returns to us the password in it's hashed (encypted form) we can store it in the database along with the other information the user has provided us. Before the data is stored away in the database we save some userinformation in the browser session object for later use and identification of the user.
-
-Login- the path
-
-Again, when the user submits is details, we have to check if he provided both password and email. If not, an error response will be sent. In the case that the user provided us with the sufficient information, we get the email from the use and with it get the password that is stored in the same row as the email. Once we have that data we use our checkPass function to compare the passwords. If they match the user will be logged in and if not, the user will have to try again. 
