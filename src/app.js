@@ -31,7 +31,7 @@ export default class App extends React.Component {
                         <Route path="/blogpost" component={Blogpost} />
                         <Route path="/podcast" component={Podcast} />
                         <Route
-                            path="/admin/login"
+                            path="/admin-registration"
                             component={AdminRegistration}
                         />
                         <Route component={ErrorSite} />

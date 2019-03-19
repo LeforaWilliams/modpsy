@@ -4,7 +4,7 @@ const SubmitButton = props => {
     const { text, submit } = props;
     return (
         <div className="submit-button-wrap">
-            <button onChange={submit}>{text}</button>
+            <button onClick={submit}>{text}</button>
         </div>
     );
 };

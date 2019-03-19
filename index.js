@@ -1,9 +1,11 @@
 const express = require("express");
 const app = express();
 const compression = require("compression");
+const cookieSession = require("cookie-session");
 const { saveDraft, saveContent, getContent } = require("./sql/db.js");
 const { registerAdmin } = require("./sql/adminDb.js");
 const { hashPass, checkPass } = require("./encryption.js");
+const { adminEmail, cookieSecret } = "./secrets.json";
 
 app.disable("x-powered-by");
 app.use(require("body-parser").json());
@@ -19,10 +21,18 @@ if (process.env.NODE_ENV != "production") {
     app.use("/bundle.js", (req, res) => res.sendFile(`${__dirname}/bundle.js`));
 }
 
+//session object middleware
+app.use(
+    cookieSession({
+        secret: { cookieSecret },
+        maxAge: 1000 * 60 * 60 * 24 * 16
+    })
+);
+
 app.use(express.static("./public"));
 
 ///////Routing//////////
-//register and login for admin
+//Admin Registration--soon only with specific email.
 app.post("/admin/register", (req, res) => {
     let { firstName, lastName, email, password } = req.body;
     if (!firstName || !lastName || !email || !password) {
@@ -35,15 +45,17 @@ app.post("/admin/register", (req, res) => {
                 return registerAdmin(firstName, lastName, email, hashedPass);
             })
             .then(adminCred => {
-                let { adminName, adminId, adminEmail, loggedIn } = req.session;
-                adminName = firstName;
-                adminId = adminCred.rows[0].id;
-                adminEmail = email;
-                loggedIn = adminCred.rows[0].id;
+                req.session.adminName = firstName;
+                req.session.adminId = adminCred.rows[0].id;
+                res.session.adminEmail = email;
+                req.session.loggedIn = adminCred.rows[0].id;
 
                 res.json({
                     success: true
                 });
+            })
+            .catch(err => {
+                console.error("error in register route index.js", err);
             });
     }
 });

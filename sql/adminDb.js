@@ -8,11 +8,13 @@ if (process.env.DATABASE_URL) {
 const db = spicedPg(dbUrl);
 
 module.exports.registerAdmin = (name, lastName, email, password) => {
-    let instertAdmin = `
-    INSERT INTO admin (name, lastname, email, password)
-    VALUES ($1,$2,$3,$4)
-    RETURNING id`[(name, lastName, email, password)];
-    return db.query(insertAdmin).catch(err => {
-        console.log("Error when saving admin registration to db >>>>", err);
-    });
+    return db
+        .query(
+            `
+      INSERT INTO admin (name, lastname, email, password)
+      VALUES ($1,$2,$3,$4)
+      RETURNING id`,
+            [(name, lastName, email, password)]
+        )
+        .catch(err => console.error("error in register admin query", err));
 };

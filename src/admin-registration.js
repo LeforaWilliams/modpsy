@@ -10,10 +10,7 @@ export default class AdminRegistration extends React.Component {
         super();
         this.state = {};
         this.handleChange = this.handleChange.bind(this);
-    }
-
-    componentDidMount() {
-        console.log("ADMIN COMPONENT");
+        this.submit = this.submit.bind(this);
     }
 
     handleChange(e) {
@@ -21,6 +18,7 @@ export default class AdminRegistration extends React.Component {
     }
 
     submit() {
+        console.log("submit button was clicked");
         axios
             .post("admin/register", {
                 firstName: this.firstName,
@@ -29,6 +27,7 @@ export default class AdminRegistration extends React.Component {
                 password: this.password
             })
             .then(({ data }) => {
+                console.log("Data after click", data);
                 if (data.success) {
                     location.replace("/admin/dashbord");
                 } else {
@@ -68,6 +67,7 @@ export default class AdminRegistration extends React.Component {
                 <input
                     placeholder="Password"
                     name="password"
+                    type="password"
                     onChange={this.handleChange}
                 />
                 <SubmitButton text="Register" submit={this.submit} />

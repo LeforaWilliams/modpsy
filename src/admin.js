@@ -12,14 +12,5 @@ export default class Admin extends React.Component {
         super(props);
     }
 
-    render() {
-        return (
-            <BrowserRouter>
-                <div className="admin-container">
-                    <Route path="/blog" component={PageContainer} />
-                    <Route path="/registration" component={AdminRegistration} />
-                </div>
-            </BrowserRouter>
-        );
-    }
+    render() {}
 }
