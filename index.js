@@ -47,9 +47,8 @@ app.post("/admin/register", (req, res) => {
             .then(adminCred => {
                 req.session.adminName = firstName;
                 req.session.adminId = adminCred.rows[0].id;
-                res.session.adminEmail = email;
+                req.session.adminEmail = email;
                 req.session.loggedIn = adminCred.rows[0].id;
-
                 res.json({
                     success: true
                 });
