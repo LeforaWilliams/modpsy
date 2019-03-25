@@ -3,10 +3,10 @@ DROP TABLE IF EXISTS admin
 
 CREATE TABLE admin (
     id SERIAL PRIMARY KEY,
-    name VARCHAR(168) NOT NULL,
+    name VARCHAR (168) NOT NULL,
     lastname VARCHAR (168) NOT NULL,
-    email VARCHAR(168) NOT NULL UNIQUE,
-    password VARCHAR(168) NOT NULL
+    email VARCHAR (168) NOT NULL UNIQUE,
+    password VARCHAR (168) NOT NULL
 );
 
 CREATE TABLE posts (

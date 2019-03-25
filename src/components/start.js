@@ -4,5 +4,10 @@ import App from "./app.js";
 
 // need to add redux later
 // https://github.com/spicedacademy/sesame/tree/master/redux
-
-ReactDOM.render(<App />, document.querySelector("main"));
+let elem;
+if (location.pathname == "/admin") {
+    elem = <Admin />;
+} else {
+    elem = <App />;
+}
+ReactDOM.render(elem, document.querySelector("main"));
